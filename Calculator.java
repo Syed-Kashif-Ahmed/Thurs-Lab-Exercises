@@ -12,16 +12,6 @@ class lessZero extends Exception
 	}
 }
 
-class improperchoice extends Exception
-{
-	public improperchoice(String str)
-	//Constructor for printing when the s=exception is occurred
-	{
-		super(str);
-		System.out.println("Give the proper inputs between 1 to 6");
-	}
-}
-
 //Main Class Calculator
 public class Calculator {
 public int add(int x,int y) throws lessZero
@@ -64,7 +54,7 @@ public int sub(int x,int y)throws lessZero
 	}
 	return x-y;
 }
-	public static void main(String[] args) throws improperchoice {
+	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
 		//Scanner class to take input.
@@ -81,11 +71,6 @@ public int sub(int x,int y)throws lessZero
 			System.out.println("\n\n\tEnter the following numbers for\n\t   1. Additon.\n\t   2. Subtraction.\n\t   3. Division");
 			System.out.println("\t   4. Multiplication.\n\t   5. Modulus.\n\t   6. Exit");
 			ch=sc.nextInt();  //Storing the user input in ch
-			try {
-				if(ch!=1||ch!=2||ch!=3||ch!=4||ch!=5||ch!=6)
-				{
-					throw new improperchoice("");
-				}
 			switch(ch)	//To Perform the operation based on user's choice.
 			{
 			case 1 :
@@ -165,11 +150,7 @@ public int sub(int x,int y)throws lessZero
 				
 			}
 		}
-			catch(Exception e)
-			{
-				System.out.println(e);
-			}
-		}
+		
 		System.out.println("Thank You");
 		//This statement is printed after coming out of the loop.
 	}
